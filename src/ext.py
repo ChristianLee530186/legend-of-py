@@ -1,5 +1,8 @@
 from . import *
 
+# Enums, variables, etc
+Direction = enum.Enum('Direction', 'up down left right')
+
 # Functions
 
 def inRange(low:int, high:int, x:int):
@@ -63,7 +66,3 @@ class Actor():
         self.spriteIndex = 0
         self.dstrect = dstrect
         self.masks = masks
-
-    def loadSpriteSheet(self) -> None:
-        for i in range(len(self.spriteSheet)):
-            self.spriteSheet[i].load()

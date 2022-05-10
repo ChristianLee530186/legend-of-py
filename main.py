@@ -1,6 +1,8 @@
 from src import *
 
 def main():
+    startUp()
+
     while True:
         timer.start()
 
