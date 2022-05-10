@@ -1,4 +1,4 @@
 from . import *
 
-class Player():
+class Player(Actor):
     pass
