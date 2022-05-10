@@ -63,6 +63,16 @@ class Actor():
     def __init__(self, id:uuid.uuid4 = uuid.uuid4(), spriteSheet:list = [], dstrect:SDL_Rect = SDL_Rect(), masks:list = []):
         self.id = id
         self.spriteSheet = spriteSheet
-        self.spriteIndex = 0
         self.dstrect = dstrect
         self.masks = masks
+
+        # Malleable attributes
+        self.spriteIndex = 0
+        self.dir = Direction.down
+        self.velocity = {
+            'vx': 0,
+            'vy': 0,
+        }
+        self.speedIncrement = 0.5
+        self.speedCap = 3
+        self.speed = 2

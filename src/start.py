@@ -7,11 +7,11 @@ def startUp():
         if isinstance(textures[texture], Texture):
             textures[texture].load()
 
-    actors[0].spriteSheet.append(Texture('sprites/player/0.png'))
+    plr.spriteSheet.append(Texture('sprites/player/0.png'))
 
-    for i in range(18):
-        for n in range(18):
-            tiles.append(Actor(dstrect = SDL_Rect(x = i * 50, y = n * 50, w = 50, h = 50), spriteSheet = [textures['grass'],]))
+    for i in range(20):
+        for n in range(20):
+            tiles.append(Actor(dstrect = SDL_Rect(x = i * (size[1] / 10), y = n * (size[1] / 10), w = (size[1] / 10), h = (size[1] / 10)), spriteSheet = [textures['grass' + str(random.randint(1,3))],]))
 
     for i in range(len(actors)):
         if isinstance(actors[i], Player):

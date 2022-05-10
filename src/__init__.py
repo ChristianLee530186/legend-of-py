@@ -1,5 +1,5 @@
 # External libraries
-import os, sys, time, uuid, enum
+import os, sys, time, uuid, enum, random, copy
 import sdl2, sdl2.ext
 
 #
@@ -31,12 +31,14 @@ from .camera import *
 from .inputs import *
 
 # Game Objects
-textures = { # Standard tile size for map building will most likely be (HEIGHT / 18)
-    'grass': Texture(os.path.abspath('maps/_tilesets/grass.png')),
+textures = { # Standard tile size for map building will most likely be (HEIGHT / 10)
+    'grass1': Texture(os.path.abspath('maps/_tilesets/grass1.png')),
+    'grass2': Texture(os.path.abspath('maps/_tilesets/grass2.png')),
+    'grass3': Texture(os.path.abspath('maps/_tilesets/grass3.png')),
     'dirt': Texture(os.path.abspath('maps/_tilesets/dirt.png')),
 }
-player = Player(dstrect = SDL_Rect(w = 50, h = 50))
-actors = [player,]
+plr = Player(dstrect = SDL_Rect(w = size[1] / 9, h = size[1] / 9))
+actors = [plr,]
 tiles = []
 timer = Timer()
 camera = Camera(0, 0, *size)

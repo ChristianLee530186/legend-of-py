@@ -9,4 +9,7 @@ def getInputs():
     keystate = sdl2.SDL_GetKeyboardState(None) # Run key inputs
     if keystate[sdl2.SDL_SCANCODE_ESCAPE]:
         quit()
-    return
+    return {
+        'keystate': keystate,
+        'events': events,
+    }
