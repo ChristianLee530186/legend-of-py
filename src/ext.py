@@ -60,14 +60,14 @@ class Texture():
         self.data = None
 
 class Actor():
-    def __init__(self, id:uuid.uuid4 = uuid.uuid4(), spriteSheet:list = [], dstrect:SDL_Rect = SDL_Rect(), masks:list = []):
-        self.id = id
-        self.spriteSheet = spriteSheet
+    def __init__(self, guid:uuid.UUID = uuid.uuid4(), spriteSheet:str = 'tiles', spriteIndex:int = 0, dstrect:SDL_Rect = SDL_Rect(), masks:list = []):
+        self.guid = guid
         self.dstrect = dstrect
         self.masks = masks
 
         # Malleable attributes
-        self.spriteIndex = 0
+        self.spriteSheet = spriteSheet
+        self.spriteIndex = spriteIndex
         self.dir = Direction.down
         self.velocity = {
             'vx': 0,

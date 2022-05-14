@@ -31,13 +31,17 @@ from .camera import *
 from .inputs import *
 
 # Game Objects
-textures = { # Standard tile size for map building will most likely be (HEIGHT / 10)
-    'grass1': Texture(os.path.abspath('maps/_tilesets/grass1.png')),
-    'grass2': Texture(os.path.abspath('maps/_tilesets/grass2.png')),
-    'grass3': Texture(os.path.abspath('maps/_tilesets/grass3.png')),
-    'dirt': Texture(os.path.abspath('maps/_tilesets/dirt.png')),
+spriteSheets = {
+    'tiles': ( # Standard tile size for map building will most likely be (HEIGHT / 10)
+        Texture(os.path.abspath('maps/_tilesets/grass1.png')),
+        Texture(os.path.abspath('maps/_tilesets/grass2.png')),
+        Texture(os.path.abspath('maps/_tilesets/grass3.png')),
+        Texture(os.path.abspath('maps/_tilesets/dirt.png')),
+    ),
+    'player': [ Texture('sprites/player/%s.png' % i) for i in range(1) ],
 }
-plr = Player(dstrect = SDL_Rect(w = size[1] / 9, h = size[1] / 9))
+
+plr = Player(dstrect = SDL_Rect(w = size[1] / 9, h = size[1] / 9), spriteSheet = 'player')
 actors = [plr,]
 tiles = []
 timer = Timer()

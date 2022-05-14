@@ -1,18 +1,18 @@
 from src import *
 
 def main():
-    startUp()
-
     while True:
-        timer.start()
+        map = os.path.abspath('maps/debug.py')
+        startUp(map)
 
-        data = getInputs()
+        while True:
+            timer.start()
 
-        update(data)
+            update(getInputs())
 
-        render()
+            render()
 
-        timer.delay(60)
+            timer.delay(60)
 
 if __name__ == '__main__':
     main()

@@ -1,8 +1,8 @@
 from . import *
 
 class Player(Actor):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def move(self, direction:Direction) -> None:
         pass
