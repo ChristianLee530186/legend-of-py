@@ -38,10 +38,10 @@ spriteSheets = {
         Texture(os.path.abspath('maps/_tilesets/grass3.png')),
         Texture(os.path.abspath('maps/_tilesets/dirt.png')),
     ),
-    'player': [ Texture('sprites/player/%s.png' % i) for i in range(1) ],
+    'player': [ Texture('sprites/player/%s.png' % i) for i in range(4) ],
 }
 
-plr = Player(dstrect = SDL_Rect(w = size[1] / 9, h = size[1] / 9), spriteSheet = 'player')
+plr = Player(dstrect = SDL_Rect(w = size[1] / 7, h = size[1] / 7), spriteSheet = 'player')
 actors = [plr,]
 tiles = []
 timer = Timer()

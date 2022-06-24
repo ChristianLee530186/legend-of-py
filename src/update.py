@@ -34,3 +34,4 @@ def updatePlayer(data):
                 plr.velocity[i[0]] += plr.speedIncrement / 2
 
     plr.physics()
+    plr.changeModel()
